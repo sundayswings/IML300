@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <!-- add jQuery UI-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="wang.js" defer></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>wang+</title>
+    <style>
+      body {
+        overflow-x: auto;
+        white-space: nowrap;
+
+        width: 2600px;
+      }
+      #wang {
+        font-size: 150px;
+        position: absolute;
+        left: 50px;
+        top: 0px;
+      }
+      #wang h1 {
+        padding: 0;
+      }
+      canvas {
+        opacity: 100%;
+        position: fixed;
+        align-items: center;
+        top: -50px;
+        left: 4vw;
+        z-index: -1;
+      }
+      #back {
+        color: red;
+        font-size: 15px;
+      }
+      #back:hover a {
+        border-bottom: 2px solid red;
+      }
+      #left-part {
+        width: 1300px;
+        height: 800px;
+        /*         border: 1px solid black; */
+        float: left;
+      }
+
+      #right-part {
+        width: 1100px; /* 2600 - 1300 = 1300px used in width */
+        height: 800px;
+        float: left;
+        display:none;
+        
+        font-family: "Verdana";
+
+        /*         border: 1px solid black; */
+      }
+      #arrow {
+        border-right: 1px solid black;
+
+        float: left;
+        font-size: 100px;
+        width: 150px;
+        height: 800px;
+        line-height: 100%;
+        margin-left: -20px;
+
+        /*         float: left; */
+      }
+      #more-info {
+        width: 800px;
+        float: left;
+        margin-left: 20px;
+      }
+      #category {
+        /*         border: 1px solid black; */
+        width: 800px;
+        height: auto;
+      }
+
+      /*
+        https://css-tricks.com/snippets/css/typewriter-effect/
+      */
+
+      #typedText {
+        margin-top: 10px;
+        font-size: 25px;
+        font-family: "Verdana";
+      }
+      #ocean-vuong h1 {
+        font-size: 35px;
+        display: inline-block;
+        border-top: 3px solid black;
+        
+/*         border: 1px solid black; */
+      }
+      #ocean-vuong {
+/*         border: 1px solid black; */
+        
+/*         margin-top: -20px; */
+        width: 800px;
+        display: none;
+      }
+      #ocean-vuong img {
+        width: 180px;
+        height: auto;
+        
+        margin-top: -10px;
+        margin-right: 15px;
+        float: left;
+      }
+      #ocean-vuong:hover #text{
+        color: black;
+      }
+      #poem{
+/*         border: 1px solid black; */
+        
+        text-align: center;
+        float: left;
+        margin-top: -10px;
+        margin-left: 15px;
+        font-size: 17px;
+        font-family: "radiohead", san-serif;
+      }
+      #text {
+/*         border: 1px solid black; */
+
+/*         width: 300px; */
+/*         margin-left: 20px; */
+        margin-top: -15px;
+        font-size: 15px;
+        color: white;
+        transition: color 1s;
+        font-family: "futura";
+      }
+      #text p{
+        padding-top: -10px;
+      }
+      .clearfloat {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="left-part">
+      <div id="wang">
+        <h1 title="drag me!">王</h1>
+      </div>
+    </div>
+
+    <div id="right-part">
+      <div id="arrow">
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+        &RightArrow;<br />
+      </div>
+
+      <div id="more-info">
+        <div id="back">
+          <a href="all.html">back 返</a>
+        </div>
+
+        <div id="category">
+          <div id="typedText"></div>
+        </div>
+        
+
+        <div id="ocean-vuong">
+          
+          <h1>Ocean Vuong/Vương Quốc Vinh</h1>
+
+          <div id="photo-vuong">
+            <img
+              src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/oceanvuong.jpeg?v=1713936083390"
+              alt="portrait of ocean vuong"
+            />
+          </div>
+
+          <p id="poem">
+            <b>Daily Bread</b><br />
+            …<br />
+            Listen,<br />
+            the year is gone. I know<br />
+            nothing of my country. I write things<br />
+            down. I build a life & tear it apart<br />
+            & the sun keeps shining. Crescent<br />
+            wave. Salt-spray. Tsunami. I have<br />
+            enough ink to give you the sea<br />
+            but not the ships, but it’s my book<br />
+            & I’ll say anything just to stay inside<br />
+            this skin. <br />
+            …<br />
+          </p>
+          
+          <div class="clearfloat">
+          </div>
+          
+          <div id="text">
+            <p>
+              Ocean Vuong, a contemporary poet, novelist, and essayist,
+              was born in Saigon in 1988 and raised in Hartford<br />, Connecticut in
+              a working class family of nail salon and factory laborers. Vuong
+              received his first name “Ocean”<br /> from his mother as a homage to
+              the
+              sea that connects Vietnam and the United States.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var aText = new Array(
+        "*Wáng*&nbsp;&nbsp;&nbsp;Mandarin - Mainland China, Taiwan",
+        "*Wong*&nbsp;&nbsp;&nbsp;Cantonese - Hong Kong, Malaysia",
+        "*Ong*&nbsp;&nbsp;&nbsp;Hokkien - Malaysia, Singapore, Indonesia",
+        "*Heng*&nbsp;&nbsp;&nbsp;Teochew - Malaysia, Singapore",
+        "*Bong*&nbsp;&nbsp;&nbsp;Hakka - Malaysia, Singapore, Indonesia",
+        "*Vong*&nbsp;&nbsp;&nbsp;Hakka - Macau",
+        "*Vương*&nbsp;&nbsp;&nbsp;Vietnamese - Vietnam, United States",
+        "*Vang*&nbsp;&nbsp;&nbsp;Hmong - Mainland China, Vietnam, Laos, United States",
+        "*Ongkiko*&nbsp;&nbsp;&nbsp;surname in Hokkien combined with first name - Philippines",
+        "*Ongkosandijojo/Raja/Surya*&nbsp;&nbsp;&nbsp;de-Sinicized/<u><a href='https://en.wikipedia.org/wiki/Chinese_Indonesian_surname'>indonesianized</a></u> surname due to a series of anti-Chinese legislations & violence",
+        "*Wongkusonkij*&nbsp;&nbsp;&nbsp;de-Sinicized/Thai-ified surname - Thailand"
+      );
+
+      var iSpeed = 6;
+      var iIndex = 0;
+      var iArrLength = aText[0].length;
+      var iScrollAt = 20;
+      var iTextPos = 0;
+      var sContents = "";
+      var iRow;
+
+      function typewriter() {
+        sContents = " ";
+        iRow = Math.max(0, iIndex - iScrollAt);
+        var destination = document.getElementById("typedText");
+
+        while (iRow < iIndex) {
+          sContents += aText[iRow++] + "<br />";
+        }
+        destination.innerHTML =
+          sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if (iTextPos++ == iArrLength) {
+          iTextPos = 0;
+          iIndex++;
+          if (iIndex != aText.length) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 500);
+          } else {
+            setTimeout(function() {
+              document.getElementById("ocean-vuong").style.display = "block"; // Change display property to block after typewriter is finished
+            }, 1900); // Adjust the delay time as needed (2000 milliseconds = 2 seconds)
+          }
+        } else {
+          setTimeout("typewriter()", iSpeed);
+        }
+      }
+
+      // Function to check the display property of #right-part
+      function checkDisplay() {
+        var secondPart = document.getElementById("right-part");
+        if (secondPart.style.display === "block") {
+          typewriter(); // Trigger typewriter effect if display is block
+        }
+      }
+
+      // Check display property initially
+      checkDisplay();
+
+      // Listen for changes in the display property
+      var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.attributeName === "style") {
+            checkDisplay();
+          }
+        });
+      });
+
+      // Observe changes in style attribute of #right-part
+      observer.observe(document.getElementById("right-part"), {
+        attributes: true,
+      });
+    </script>
+  </body>
+</html>

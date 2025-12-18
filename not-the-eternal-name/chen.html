@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="chen.js" defer></script>
+
+    <title>chen+</title>
+    <style>
+      * {
+        /*                  border: 1px solid black; */
+      }
+      body {
+        margin: 0;
+      }
+      #chen {
+        font-size: 140px;
+        animation: slide 6s linear infinite;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(-30%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      canvas {
+        opacity: 100%;
+        position: fixed;
+        align-items: center;
+        top: -50px;
+        left: 4vw;
+        z-index: 2;
+      }
+      #arrow {
+        font-size: 120px;
+      }
+
+      #second-part {
+        display: none;
+        width: 1000px;
+        height: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -100px;
+
+        /*         border: 1px solid black; */
+      }
+
+      #second-part h1 {
+        text-align: center;
+        transition: font-size, 0.7s;
+      }
+      #second-part h1:hover {
+        font-size: 40px;
+      }
+      #second-part a {
+        font-size: 50px;
+        color: red;
+        font-family: "han", sans-serif;
+      }
+
+      #figure {
+        padding: 20px;
+        /*         border: 1px solid black; */
+      }
+      #figure h1 {
+        font-size: 50px;
+      }
+      #figure p {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      #figure #intro {
+        font-size: 20px;
+        font-family: "Verdana";
+      }
+
+      #back a:hover {
+        border-top: 3px solid red;
+      }
+
+      #music {
+        /*         border: 1px solid black; */
+        text-align: center;
+      }
+
+      #album-cover {
+        width: 265px;
+        height: auto;
+        display: block;
+        transition: width 0.5s;
+      }
+
+      #album-cover:hover {
+        width: 280px;
+      }
+      #photo-chen {
+        /*         border: 1px solid black; */
+        float: left;
+        margin-left: 20px;
+        margin-top: 25px;
+      }
+      #photo-chen img {
+        width: 230px;
+      }
+      #intro {
+        /*         border: 1px solid black; */
+        width: 550px;
+        float: left;
+        margin-left: -20px;
+        /*         display: inline; */
+      }
+      #lyrics {
+        margin-top: 30px;
+      }
+      @keyframes shiver {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-0.3px) rotate(0deg);
+        }
+        50% {
+          transform: translateX(0.3px) rotate(-0.4deg);
+        }
+        75% {
+          transform: translateX(-0.4px) rotate(0.5deg);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      #lyrics p {
+        /*         animation: shiver 2s infinite; */
+      }
+      #lyrics p span {
+        display: inline-block;
+        animation: shiver 0.5s infinite alternate;
+      }
+      #back {
+        padding-bottom: 20px;
+      }
+      .surname {
+        display: inline-block;
+      }
+      .explain {
+        display: none;
+      }
+      .surname:hover + .explain {
+        display: block;
+      }
+      #more-info {
+/*         border: 1px solid black; */
+        text-align: center;
+        margin-top: -50px;
+        padding: 0;
+      }
+      #more-info p {
+        margin: 0;
+        padding: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--   go back button   -->
+
+    <div id="chen">
+      <h1>陳</h1>
+    </div>
+
+    <div id="second-part">
+      <!--   an arrow     -->
+      <h1 id="arrow">&#8595;</h1>
+
+      <br /><br />
+
+      <!--    map the 'regions' of last names    -->
+      <div id="more-info">
+        <details>
+          <summary>chén</summary>
+          <p>* mandarin * mainland china, taiwan</p>
+        </details>
+        <details>
+          <summary>chan</summary>
+          <p>* cantonese * hong kong, malaysia</p>
+        </details>
+        <details>
+          <summary>tan</summary>
+          <p>* hokkien * malaysia, singapore, indonesia</p>
+        </details>
+        <details>
+          <summary>chin</summary>
+          <p>* hakka * malaysia, singapore, indonesia</p>
+        </details>
+        <details>
+          <summary>ding</summary>
+          <p>* eastern min * malaysia, singapore</p>
+        </details>
+        <details>
+          <summary>trần</summary>
+          <p>* vietnamese * vietnam, united states</p>
+        </details>
+        <details>
+          <summary>jin</summary>
+          <p>* korean * south korea, north korea, united states</p>
+        </details>
+        <details>
+          <summary>tantoco</summary>
+          <p>
+            * han surname in hokkien combined with first name amongst chinese
+            philippino * philippine
+          </p>
+        </details>
+        <details>
+          <summary>tantrakul</summary>
+          <p>* desinicized/thaified surname * thailand</p>
+        </details>
+        <details>
+          <summary>chendrawan, tandiono, sutanto</summary>
+          <p>
+            * desinicized/indonesianized surname due to anti-chinese
+            legislations/violences * indonesia
+          </p>
+        </details>
+        <p>
+          ...
+        </p>
+      </div>
+
+      <!--    figure    -->
+      <div id="figure">
+        <a href="https://en.wikipedia.org/wiki/Chen_Jiongming" target="_blank"
+          ><h1>陳炯明 Chʻên2 Chiung3-ming2</h1></a
+        >
+
+        <div id="photo-chen">
+          <img
+            src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/chen.png?v=1713906303566"
+            alt="portrait of Chen"
+          />
+        </div>
+
+        <p id="intro">
+          <u>
+            Born in <b>Haifeng</b>, Guangdong in the late Qing Dynasty, Chen
+            Jiongming was best known as a Haklau revolutionary figure who,
+            during his political career, played a key role in the tumultuous
+            politics of southern China from 1909 until his death in 1933.
+            Defeated by Sun Yat-sen’s forces, Chen fled to <b>Huizhou</b> in the
+            eastern Guangdong and then <b>Hong Kong</b>, and died of typhus in
+            this foreign land. He was buried in <b>Huizhou</b> a year later. </u
+          ><br /><br />
+          <u>
+            In 2012, 79 years after his passing, a band from
+            <b>Haifeng</b> wrote a song about him. The entire song repeats the
+            four lines.
+          </u>
+        </p>
+
+        <!--    audio      -->
+        <div id="music">
+          <div class="image-container">
+            <a
+              href="https://open.spotify.com/album/2mdbcqmnXOfUJlDQTdpALG?si=DEo_WOo1QFWbjJW-SO3zYA"
+              target="_blank"
+              ><img
+                src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/wtr.png?v=1713906307133"
+                alt="album cover"
+                id="album-cover"
+            /></a>
+          </div>
+          <audio controls>
+            <source
+              id="audioPlayer"
+              src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/chen-xian-sheng.mp3?v=1713906179689"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+
+          <div id="lyrics">
+            <p>
+              <span class="shiver-char">1</span><span>8</span
+              ><span class="shiver-char">7</span
+              ><span>8</span
+              >年，<span>伊</span>生于<span>海</span>丰（<span>海</span>丰<span>话</span>）<br />
+              In <span>1878</span>, <span>he</span> was born in
+              <span class="shiver-char">Haifeng</span> (<span>Haifeng</span>
+              dialect, a regional variation of <span>Hokkien</span>).<br />
+              <span>1</span><span>9</span><span>3</span
+              ><span>3</span
+              >年，<span>佢</span>死于<span>香</span>港（<span>廣</span>東<span>话</span>）<br />
+              In <span>1933</span>, <span>he</span> died in
+              <span>Hong Kong</span> (<span>Cantonese</span>).<br />
+              <span>1</span><span>9</span><span>3</span
+              ><span>4</span
+              >年，<span>其</span>葬于<span>惠</span>州（<span>客</span>家<span>话</span>）<br />
+              In <span>1934</span>, <span>he</span> was buried in
+              <span>Huizhou</span> (<span>Hakka</span>).<br />
+              <span>陈</span>先生<br />
+              <span>Mr.</span> <span>Tan/Chen</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="back">
+        <a href="all.html">back 返</a>
+      </div>
+    </div>
+
+    <!--     <p title="This is the description.">Hover over me</p> -->
+  </body>
+</html>

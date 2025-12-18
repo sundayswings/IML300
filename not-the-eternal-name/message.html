@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>leave a message</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+    <script src="message.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      h1 {
+        font-family: "han", san-serif;
+        font-size: 100px;
+        
+        margin-top: -40px;
+      }
+      body {
+        /*         background-color: #d9d2e9; */
+        font-family: Helvetica, sans-serif;
+      }
+
+      #all {
+        width: 80%;
+        height: auto;
+/*         border: 1px solid black; */
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container {
+        /*     background-color: yellow; */
+        margin: 30px;
+        text-align: center;
+      }
+      #text-input-entry {
+        width: 70%; /* Set the width to 100% to fill the container */
+        padding: 10px; /* Add padding for spacing */
+        font-size: 16px; /* Set the font size */
+        border: 1px solid #ccc; /* Add border for visual distinction */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        margin-top: 0; /* Remove margin from the top */
+      }
+      #text-input-submit {
+        padding: 10px; /* Add padding for spacing */
+        font-size: 16px; /* Set the font size */
+      }
+
+      input {
+        height: 40px;
+        border: 1px solid #c4c4c4;
+        border-radius: 15px;
+        background-color: transparent;
+        padding: 50px 100px;
+        margin-bottom: 20px;
+      }
+
+      .response {
+        /*         background-color: #b299ed; */
+        background-color:rgba(255, 0, 0, 0.2)
+        color: white;
+        margin: 0.2em;
+        padding: 1em;
+        border-radius: 15px;
+        box-shadow: 0 0 50px #fff;
+
+        /*   border: 1px solid white; */
+      }
+      #all h2 {
+        font-size: 40px;
+        font-family: "han", san-serif;
+/*         margin-top: -40px; */
+      }
+      #all h3 {
+        margin-top: -60px;
+        font-family: "han", san-serif;
+      }
+      #back a {
+        font-family: "han", san-serif;
+      }
+      #back a:hover {
+        border-bottom: 1px solid red;
+      }
+      #chat-container {
+        font-family: "han", san-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="back">
+      <a href="all.html">back 返</a>
+    </div>
+    
+    <div id="all">
+      <h2>
+        not the eternal name
+      </h2>
+      <h1>名可名，非常名</h1>
+
+      <h3>
+        this site is created by qi wang<br>for any inquiries or corrections, please write to
+        <a href="mailto:sundaypark7@outlook.com"><u>sundaypark7@outlook.com</u></a>
+      </h3>
+
+      <div class="container">
+        <form id="text-input-form" onsubmit="return false">
+          <input
+            type="text"
+            id="text-input-entry"
+            placeholder="how are you? anything to say after viewing this site?"
+            style="font-family: "han", san-serif;"
+          />
+          <input
+            type="submit"
+            id="text-input-submit"
+            onclick="submitlock()"
+            value="send!"
+          />
+        </form>
+
+        <div id="chat-container"></div>
+      </div>
+    </div>
+  </body>
+</html>

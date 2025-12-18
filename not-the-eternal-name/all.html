@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>family names</title>
+
+    <link rel="stylesheet" href="style.css" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="allNames.js" defer></script>
+    
+    <style>
+      canvas {
+        opacity: 100%;
+        position: fixed;
+        align-items: center;
+        top: -50px;
+        left: 4vw;
+        z-index: -1;
+      }
+      
+      *{
+/*         border: 1px solid black; */
+      }
+      h1,p {
+        font-family: "han", sans-serif;
+        transition: all 0.4s ease-in;
+        display: inline;
+        padding:0;
+        margin: 10px;
+        
+/*         font-size: 50px; */
+      }
+
+      h1:hover {
+/*         font-family: "lishu", sans-serif; */
+        font-size: 230%;
+      }
+    
+      #chen {
+        font-size: 180px;
+      }
+/*       p {
+        font-size: 170px;
+      } */
+      #dotdotdot{
+        font-size: 80px;
+        transform: rotate(180deg);
+        float: left;
+        
+        margin-left: 60px;
+      }
+      #combo {
+        width: 400px;
+        height: 800px;
+        float: left;
+        margin-left: 50px;
+      }
+      #combo-two {
+        float: left;
+        
+        width: 850px;
+        height: 800px;
+        
+        margin-left: -20px;
+      }
+      #zhang {
+        font-size: 145px;
+        float: left;
+        transform: rotate(270deg);
+        margin-right: 10px;
+      }
+      #zhou {
+        font-size: 165px;
+        float: left;
+        
+        margin-top: -30px;
+      }
+      #li{
+        font-size: 120px;
+        float: left;
+        
+        margin-top: -60px;
+      }
+      #wang{
+        float: left;
+        font-size: 80px;
+        
+        margin-top: -25px;
+      }
+      #combo-three{
+        float: left;
+        width: 200px;
+        height: 350px;
+        
+        margin-top: -50px;
+      }
+      #liu {
+        float: left;
+        font-size: 60px;
+        
+        margin-left: 45px;
+        margin-top: -20px;
+      }
+      #huang {
+        float: left;
+        font-size: 140px;
+        transform: rotate(270deg);
+        
+        margin-top: -50px;
+      }
+      
+      #nav a:hover {
+        border-bottom: 1px solid black;
+      }
+      .clearfloat {
+        clear: both;
+      }
+      h1:hover {
+        color:rgba(167, 22, 6, 0.93)
+      }
+      #nav {
+/*         border: 1px solid black; */
+        width: 140px;
+        height: auto;
+        float: left;
+        margin-top: 15px;
+      }
+      #nav a {
+        display: block;
+        font-size: 14px;
+      }
+      #name p {
+        font-size: 10px;
+      }
+      #eng-translation {
+/*         border: 1px solid black; */
+        margin: 20px;
+/*         transform: rotate(90deg); */
+      }
+      #right-part {
+        width: 140px;
+        height: 700px;
+/*         border: 1px solid black; */
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="all-chars">
+      <div id="combo">
+        <div id="chen">
+          <a href="chen.html"><h1>陳</h1></a>
+        </div>
+
+        <div class="clearfloat"></div>
+
+        <div id="dotdotdot">
+          <p>...</p>
+        </div>
+      </div>
+
+      <div id="combo-two">
+        <!--    line one     -->
+        <div id="zhang">
+          <a href="#"><h1>張</h1></a>
+        </div>
+
+        <div id="zhou">
+          <a href="zhou.html"><h1>周</h1></a>
+        </div>
+
+        <div class="clearfloat"></div>
+
+        <!--   line two     -->
+        <div id="li">
+          <a href="#"><h1>李</h1></a>
+        </div>
+
+        <div id="combo-three">
+          <div id="wang">
+            <a href="wang.html"><h1>王</h1></a>
+          </div>
+
+          <div id="liu">
+            <a href="#"><h1>劉</h1></a>
+          </div>
+        </div>
+
+        <div id="huang">
+          <a href="#"><h1>黃</h1></a>
+        </div>
+
+      </div>
+    </div>
+    
+    
+    <div id="right-part">
+      <div id="name">
+        <h3>
+          名可名，非常名
+        </h3>
+
+        <div id="eng-translation">
+          <p>
+            the name that can be named is not the eternal name
+          </p> 
+        </div>
+      </div>
+
+      <div id="nav">
+
+        <a href="tree.html">關於 about</a>
+        <a href="reference.html">更多信息 reference</a>
+        <a href="index.html">重啟 restart</a>
+        <a href="message.html">請留言 leave a message</a>
+        <br><br><br><br><br><br><br><br>
+        <p style="color:red;">
+          *site under construction, more pages to come
+        </p>
+      </div>
+    </div>
+    
+
+  
+
+
+
+  
+  </body>
+</html>

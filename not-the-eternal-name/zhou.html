@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--   matter.js   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <!--   p5.js   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="zhou.js" defer></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>zhou+</title>
+    <style>
+      * {
+        /*         border: 1px solid black; */
+      }
+      canvas {
+        opacity: 100%;
+        position: fixed;
+        align-items: center;
+        top: -70px;
+        /*         left: 4vw; */
+        z-index: -1;
+
+        border-bottom: 1px solid black;
+      }
+
+      #zhou {
+        font-size: 140px;
+        float: left;
+
+        margin-top: -40px;
+        margin-left: 40px;
+      }
+
+      #info {
+/*         color: rgba(167, 22, 6, 0.83); */
+/*         color: red; */
+        font-family: "Courier";
+        font-size: 18px;
+        position: absolute;
+        right: 100px;
+        top: 40px;
+
+        width: 850px;
+        height: 240px;
+        padding: 50px;
+        /*         float: left; */
+
+        display: none;
+      }
+      #story h1 {
+        font-family: "han";
+      }
+
+      #story {
+        width: 390px;
+        height: 400px;
+/*         background-color: rgba(199, 0, 0, 0.26); */
+        position: absolute;
+        right: 10px;
+        bottom: 40px;
+        z-index: 2;
+        padding: 18px;
+        font-family: "Verdana";
+
+
+        display: none;
+
+        /*         float: left; */
+      }
+      #story h3 {
+        transition: font-size 1s;
+      }
+      #story h3:hover {
+        font-size: 14px;
+      }
+      #back {
+        margin-top: 30px;
+        padding-top: 5px;
+        border-top: 1px solid black;
+        color: red;
+        font-family: "Courier";
+
+        display: none;
+      }
+      #back:hover a {
+        border-bottom: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="zhou">
+      <h1>周</h1>
+    </div>
+
+    <div id="info">
+      <div id="typedText"></div>
+    </div>
+
+    <div id="story">
+      <h1>Shou Zi Chew/周受資</h1>
+
+      <p>
+        * A Singaporean businessman who has been serving as the chief executive
+        officer of TikTok. After his military service in Singapore, he went on
+        pursue a Bachelor of Economics degree from University College London and
+        completed a Master of Business Administration from Harvard Business
+        School.<br> * In March 2023, Chew testified before the United States Congress
+        regarding the legislative effort to ban TikTok in the United States. He
+        testified again in January 2024, during a United States Senate Judiciary
+        Committee hearing regarding legislation on child internet safety.
+      </p>
+      <a href="https://www.youtube.com/watch?v=RgLQCfypDLk" target="_blank"><h3>"Senator, I'm Singaporean. No."</h3></a>
+    </div>
+
+    <div id="back">
+      <a href="all.html">back 返</a>
+    </div>
+
+    <script>
+      // keep track of users' clicks
+      // to show more info after certain amount of clicks
+      let clickCount = 0;
+      $(document).ready(function () {
+        $(document).on("click", function () {
+          clickCount++;
+          if (clickCount >= 7) {
+            $("#info").css("display", "block");
+            $("#back").css("display", "block");
+            // then after 5s or so, show more
+            setTimeout(function () {
+              $("#story").css("display", "block");
+            }, 6500);
+          }
+        });
+      });
+    </script>
+
+    <script>
+      var aText = new Array(
+        "*Zhōu*&nbsp;&nbsp;&nbsp;Mandarin - Mainland China, Taiwan",
+        "*Chou*&nbsp;&nbsp;&nbsp;Hokkien - Taiwan",
+        "*Chow, Chou*&nbsp;&nbsp;&nbsp;Cantonese - Malaysia, Hong Kong, Taiwan",
+        "*Chew, Chiu, Tsiu*&nbsp;&nbsp;&nbsp;Hokkien - Malaysia, Singapore, Indonesia",
+        "*Chau, Chow*&nbsp;&nbsp;&nbsp;Teochew - Malaysia, Singapore",
+        "*Jiu, Zu, Zhiu*&nbsp;&nbsp;&nbsp;Hakka - Malaysia, Singapore, Indonesia",
+        "*Chu, Châu*&nbsp;&nbsp;&nbsp;Vietnamese - Vietnam",
+        "*Ciu, Tjoe, Tjioe, Tjokrowidjokso, Juanda, Juano, Cokrowijikso*&nbsp;&nbsp;&nbsp;Han surname in Hokkien combined with chinese first name - Vietnam",
+        "*Saechio, Saeziou, Sae-Chew*&nbsp;&nbsp;desinicized, thaified surname - Thailand",
+        "..."
+    );
+
+
+      var iSpeed = 8;
+      var iIndex = 0;
+      var iArrLength = aText[0].length;
+      var iScrollAt = 20;
+      var iTextPos = 0;
+      var sContents = "";
+      var iRow;
+
+      function typewriter() {
+        sContents = " ";
+        iRow = Math.max(0, iIndex - iScrollAt);
+        var destination = document.getElementById("typedText");
+
+        while (iRow < iIndex) {
+          sContents += aText[iRow++] + "<br />";
+        }
+        destination.innerHTML =
+          sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if (iTextPos++ == iArrLength) {
+          iTextPos = 0;
+          iIndex++;
+          if (iIndex != aText.length) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 500);
+          }
+        } else {
+          setTimeout("typewriter()", iSpeed);
+        }
+      }
+      typewriter();
+    </script>
+  </body>
+</html>

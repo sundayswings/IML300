@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="text-shrinks.js"></script>
+    
+    <style>
+      body {
+        margin: 0;
+        background-image: url("https://cdn.glitch.global/3a79c03b-dc2a-4249-882c-cb3618ac2202/IMG_9342.jpg?v=1710808471731");
+        background-size: cover;
+      }
+      h1 {
+        font-size: 120px;
+        font-family: "handwriting";
+        /*         margin: 10px; */
+      }
+      h2 {
+        font-size: 80px;
+        font-family: "handwriting";
+      }
+      p {
+        font-family: "typewriter", sans-serif;
+        color: white;
+      }
+      #modernity p, #cultural p {
+        font-family: "handwriting";
+        font-size: 20px;
+      }
+      #modernity {
+/*                 border: 1px solid black; */
+        width: 400px;
+        float: left;
+        margin: 80px;
+        margin-top: 40px;
+        text-align: end;
+      }
+      #cultural {
+/*                 border: 1px solid black; */
+        position: relative;
+        left: 100px;
+        top: 50px;
+        width: 500px;
+/*         margin: 70px; */
+        float: left;
+/*         margin-top: -30px; */
+        text-align: end;
+      }
+      #and {
+/*         border: 1px solid black; */
+        font-size: 180px;
+        float: left;
+        position: relative;
+        left: 60px;
+        margin-top: -20px;
+      }
+      #and p {
+        font-family: "handwriting";
+      }
+      #ending {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin: 40px;
+        margin-bottom: 70px;
+        width: 1000px;
+        font-size: 15px;
+      }
+/*       #ending p{
+        color: black;
+      } */
+      #fazhan {
+        z-index: 1;
+      }
+      #layer {
+        z-index: 2;
+      }
+      #linkage {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 20px;
+      }
+      #linkage:hover p {
+        font-size:25px;
+        text-decoration: underline;
+      }
+      /*       .container{
+        position: relative;
+        margin:0;
+        border: 1px solid black;
+      } */
+      /*       .element {
+        position: absolute;
+
+      } */
+    </style>
+  </head>
+  <!--   <div class="container"> -->
+  <!--     <div id="fazhan" class="element">
+      <p>
+        发展！发展！发展！大步迈进！
+      </p>
+    </div>
+ -->
+
+  <!--     <div id="layer" class="element"> -->
+  <h1>How does a place reconcile</h1>
+
+  <div id="modernity">
+    <details>
+      <summary>
+        <h2>MODERNITY</h2>
+      </summary>
+
+      <hidden>
+        <details>
+          <summary>
+            <p>⋆ high-rise</p>
+            <p>⋆ transportation/mobility</p>
+            <p>⋆ hygiene</p>
+            <p>⋆ taste of cosmopolitanism</p>
+            <p>⋆ profit-oriented planning</p>
+            <div contenteditable="true">
+              <p>?</p>
+            </div>
+            <!--             <div contenteditable="true">
+                  <p>
+                     ⋆ {*****.. edit ..*****}
+                  </p>
+                </div> -->
+          </summary>
+        </details>
+      </hidden>
+    </details>
+  </div>
+
+  <div id="and">
+    <p>
+      &amp;
+    </p>
+  </div>
+
+  <div id="cultural">
+    <details>
+      <summary>
+        <h2>CULTURAL IDENTITIES</h2>
+      </summary>
+
+      <hidden>
+        <details>
+          <summary>
+            <p>⋆ traditional artefacts</p>
+            <p>⋆ language/dialects</p>
+            <p>⋆ perhaps a totalizing historical narrative</p>
+            <p>⋆ tourist gaze</p>
+            <p>⋆ museum</p>
+            <div contenteditable="true">
+              <p>??</p>
+            </div>
+            <!--             <div contenteditable="true">
+                  <p>
+                     ⋆ {*****.. edit ..*****}
+                  </p>
+                </div> -->
+          </summary>
+        </details>
+      </hidden>
+    </details>
+  </div>
+
+  <div id="ending">
+    <p>
+      { *...
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a desire to be modern, to feel modern
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      & an almost simultaneous craving for a certainty in something cultural
+      that confirms your impeccable linkage to this place
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ..***}
+
+      <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;an inevitable
+      duality
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      google
+      <a
+        href="https://www.google.com/search?client=safari&sca_esv=94e5231ad7b8805c&hl=en&sxsrf=ACQVn081x_lB3CLAtHuS7LuwiO5_wFrBLg:1710738261386&q=suzhou&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiunP7ShP2EAxVGMUQIHQRtDugQ0pQJegQICxAB&biw=1440&bih=820&dpr=2"
+        target="_blank"
+        >suzhou</a
+      >
+    </p>
+  </div>
+
+  <div id="linkage">
+    <p>
+      <!--           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+      but <em>you</em> have an urge to walk around the place more
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      in a faith that i am able to walk out of the circumscribed routes
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      and see <a href="pig.html">alternative</a> reality
+    </p>
+
+    <!--     <p>
+          <a href="second.html">come</a> with me
+        </p> -->
+  </div>
+
+  <!--     </div> -->
+  <!--   </div> -->
+</html>

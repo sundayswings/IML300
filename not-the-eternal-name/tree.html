@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>a grafted tree</title>
+
+    <style>
+      canvas {
+        opacity: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Change to a lower value */
+      }
+
+      #tree {
+        /*         border: 1px solid black; */
+        width: 750px;
+        height: 700px;
+      
+        float: left;
+      }
+
+      #all-content {
+        float: left;
+/*         border: 1px solid black; */
+        width: 500px;
+        height: auto;
+        /*         line-height: 1.5; */
+
+        margin-left: 80px;
+        margin-top: 110px;
+      }
+
+      img {
+        margin-top: 20px;
+        width: 800px;
+        height: auto;
+        transition: transform 0.6s ease-in, width 0.4s, margin-left 0.4s ;
+      }
+      #tree:hover img {
+        transform: rotate(-45deg);
+        width: 600px;
+        height: auto;
+        margin-top: 110px;
+        margin-left: 200px;
+      }
+      h1 {
+        font-size: 80px;
+      }
+
+      #tap a {
+        color: red;
+      }
+      #tap p {
+        font-family: "Georgia", san-serif;
+      }
+      #tap a:hover {
+        border-top: 2px solid red;
+      }
+      #texts {
+        font-family: "Georgia", san-serif;
+        line-height: 1.5;
+        padding: 20px;
+        margin-top: -20px;
+      }
+      #texts p {
+        font-size: 20px;
+        
+      }
+      #def-graft img {
+        width: 400px;
+        height: auto;
+      }
+      #def-graft h2 {
+        transition: font-size 1s;
+/*         color: red; */
+      }
+      #def-graft h2:hover {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" resize></canvas>
+
+    <div id="tree">
+      <img
+        src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/tree.PNG?v=1713997871744"
+        alt="a grafted tree"
+      />
+    </div>
+
+    <div id="all-content">
+      <div id="def-graft">
+        <img
+          src="https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/graft.png?v=1714010948221"
+          alt="definition of 'graft'"
+        />
+        <a href="https://www.youtube.com/watch?v=meMdxmbn5qA" target="_blank"><h2>
+          “The tree is becoming part of another tree,” he says. “But you should know that both trees are important.”
+        </h2></a>
+      </div>
+
+      <div id="texts">
+        <p>
+          The people in diaspora often retain their original surnames, which are
+          often spelled in their own dialects or languages (predominantly Cantonese,
+          Hokkien, and Hakka). These surnames may also undergo
+          local adaptations to reflect the cultural and political environment of
+          the new country they reside in.
+        </p>
+      </div>
+
+      <div id="tap">
+        <p>
+          to see the world in <a href="all.html">a grain of surname<br /></a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

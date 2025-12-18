@@ -1,0 +1,103 @@
+.image-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Set width of container */
+    height: 300px; /* Set height of container */
+/*     border: 1px solid black; /* Optional: Add border for visualization */ */
+}
+
+.container img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+}
+
+
+
+
+
+
+@font-face {
+  font-family: "lishu";
+  src: url("https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/Li%20Su%20Medium%20Font.ttf?v=1713415460725");
+}
+
+@font-face{
+  font-family: "jaycon";
+  src: url("https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/Jaycons.ttf?v=1713415547158");
+}
+
+/* this one is better - edgy */
+@font-face{
+  font-family: "han";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+
+a {
+    color: inherit; /* Use the color inherited from the parent element */
+    text-decoration: none; /* Remove underline */
+    background-color: transparent; /* Remove background color */
+    cursor: auto; /* Use default cursor */
+  }
+
+
+/* hand-writing styled fonts */
+/* url has not updated yet */
+@font-face{
+  font-family: "one";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+
+@font-face{
+  font-family: "two";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+@font-face{
+  font-family: "three";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+@font-face{
+  font-family: "four";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+@font-face{
+  font-family: "five";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+@font-face{
+  font-family: "six";
+  src: url("https://cdn.glitch.me/6b0f94bc-510d-432f-9896-1187d4b4ffcb/SourceHanSerifHC-Medium.otf?v=1713415643455");
+}
+
+/*
+  used in zhou's typewriter
+*/
+@font-face{
+  font-family: "7yearsold";
+  src: url("https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/5yearsoldfont.ttf?v=1713492723331");
+}
+
+/* 
+  radiohead, used in ocean vuong's poem
+*/
+@font-face{
+  font-family: "radiohead";
+  src: url("https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/rabiohead.ttf?v=1713492736474");
+}
+
+
+/* 
+  'blzee', used in p tags in chen.html 
+*/
+@font-face{
+  font-family: "nine";
+  src: url("https://cdn.glitch.global/6b0f94bc-510d-432f-9896-1187d4b4ffcb/blzee.ttf?v=1713909606230");
+}
+
+

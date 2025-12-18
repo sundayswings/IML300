@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pig disappears</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <script src="click-img.js"></script>
+    
+    <style>
+/*       html, body {
+        cursor: not-allowed;
+      } */
+      body {
+        background-color: black;
+        background-image: url(https://cdn.glitch.global/3a79c03b-dc2a-4249-882c-cb3618ac2202/DSC00122.JPG?v=1709096833282);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+
+      }
+      #pig-lost-text {
+        position:absolute;
+        top:0;
+        left:0;
+/*         border: 1px solid white; */
+        width: 800px;
+        margin-top: 60px;
+      }
+      
+      #chinese {
+/*         border: 1px solid white; */
+        position: relative;
+        left: 200px;
+        color: white;
+        width: 300px;
+        text-align: center;
+        float: left;
+      }
+      #eng{
+        position: absolute;
+        bottom:-100px;
+        left: 400px;
+/*         border: 1px solid white; */
+        width:400px;
+        text-align: center;
+        float: left;
+        font-size: 10px;
+        color:silver;
+      }
+      #lots-chair {
+/*         margin:30px; */
+        position: absolute;
+        bottom:0;
+        right:0;
+        width: 600px;
+        height: auto;
+      }
+      #choice{
+        position: absolute;
+        right:0;
+        top:0;
+        margin:80px;
+        margin-left: 300px;
+        color:whitesmoke;
+        font-family: "typewriter", sans-serif;
+/*         border: 1px solid white; */
+      }
+      a:hover {
+        color: yellow;
+      }
+      
+      @keyframes shake {
+        0% {
+          transform: translate(-0.5px, -0.5px);
+        }
+        25% {
+          transform: translate(1px, 2px);
+          margin-left: 30px;
+        }
+        50% {
+          transform: translate(-1.4px, -1px);
+          color:black;
+        }
+        75% {
+          transform: translate(0.5px, 1px);
+          margin-left:5px;
+        }
+        100% {
+          transform: translate(-0.5px, -0.5px);
+        }
+      }
+
+      #chinese p {
+        animation: shake 3s ease infinite;
+      }
+      
+      @keyframes shakeE {
+        0% {
+          transform: translate(0.5px, 0.5px);
+        }
+        20% {
+          transform: translate(-0.2px, -0.2px);
+        }
+        50% {
+          transform: translate(0.8px, -0.8px);
+          margin-left: -10px;
+/*           color: gray; */
+        }
+        65% {
+          transform: translate(1px, 2px);
+/*           margin-left: -10px; */
+        }
+        100% {
+          transform: translate(0.5px, 0.5px);
+        }
+      }
+
+      
+      #eng p {
+/*         animation: shakeE 1s ease infinite; */
+      }
+      
+      #one-chair {
+        width: 150px;
+        height: auto;
+        margin:0;
+        padding:0;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+      <div id="pig-lost-text">
+        <div id="chinese">
+          <p>
+            豬隻在城中逐一消失<br>
+            昨日在北角<br>
+            今日在鰂魚涌<br><br>
+
+            牠們一隻一隻<br>
+            迷失了路途 四處閒遊<br>
+            牠們一隻一隻<br>
+            闖進了禁區 大禍臨頭<br><br>
+
+            人類普遍怯懦<br>
+            一旦遇見豬隻 便如臨大敵 先發制人<br>
+            一擊 二擊 三擊<br>
+            不求活捉 只求了結<br><br>
+            
+            ...<br><br>
+
+<!--             牠們驚叫 逃亡 無力反抗<br>
+            最後倒地身亡<br><br>
+
+            人類終究地位崇高<br>
+            可以主宰一切<br>
+            豬隻感到無力<br>
+            只能默默承受一切的不公平<br><br>
+ -->
+            對於豬隻<br>
+            社會對牠們做過甚麼？<br>
+            我們對牠們做過甚麼？<br><br><br>
+
+            -阿雪《豬隻在城中逐一消失》<br>
+          </p>
+        </div>
+        
+        <div id="eng">
+          <p>
+            pigs disappear, one by one, in the heart of city<br>
+            yesterday in North Point,<br>
+            today in Quarry Bay.<br><br>
+            
+            lost they are,<br>
+            each one, wandering astray,<br>
+            into forbidden areas they stray,<br>
+            where perils hold sway.<br><br>
+            
+            humans, timid souls,<br>
+            at the sight of swine,<br>
+            strike first, strike fast,<br>
+            in fear's design.<br><br>
+            
+<!--             With cries they flee, powerless to withstand,<br>
+            Till they fall, silent, on desolate land.<br><br>
+            
+            Humans reign supreme,<br>
+            their power unfurled,<br>
+            While pigs, in silence,<br> 
+            bear an unfair world.<br><br> -->
+            
+            ...<br><br>
+            
+            what have we done to them?<br>
+            what has society wrought,<br>
+            in this tale's grim spin?<br><br><br>
+            
+            -Ah Suet, pigs disappear in city<br>
+          </p>
+        
+        </div> <!--    #eng      -->
+
+      </div>
+      
+      <div id="choice">
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seems like something is crumbling but the chairs remain <br>
+            <a href="where.html">where</a> did the pigs go?
+          </p>
+          <br>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            i want to <a href="sit.html">sit</a>
+          </p>
+      </div> <!--     #choice     -->
+
+      <!-- <div id="single-chair">
+        <img class="portrait" src="https://cdn.glitch.global/3a79c03b-dc2a-4249-882c-cb3618ac2202/DSC00206.JPG?v=1709096365430" alt="img">
+      </div> -->
+      
+      <img id="one-chair" src="https://cdn.glitch.global/3a79c03b-dc2a-4249-882c-cb3618ac2202/chairs%202.jpg?v=1711408544981" alt="img">
+
+      <img id="lots-chair" class="portrait" src="https://cdn.glitch.global/3a79c03b-dc2a-4249-882c-cb3618ac2202/chairs.jpg?v=1711408550807" alt="img">
+
+    
+  </body>
+</html>
